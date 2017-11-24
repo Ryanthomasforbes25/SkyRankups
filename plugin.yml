@@ -1,0 +1,54 @@
+name: SkyRankups
+main: net.derpz.sbrankup.SBRankup
+version: 1.1.0
+author: MajorGamesYT <abs12>
+depend: [Vault, ASkyBlock]
+
+commands:
+  sbrankup:
+    description: Attempts a rankup for you
+    usage: /<command>
+    permission: sbrankup.rankup
+    #permission-message: You are missing the permission <permission>!
+
+  sbranklist:
+    description: Views all the ranks the player has access to
+    usage: /<command>
+    permission: sbrankup.ranklist
+  sbadmin:
+    description: SBRankup administration utility
+    usage: /<command> [action] [arguments]
+    permission: sbrankup.admin
+
+permissions:
+  sbrankup.player.*:
+    description: Gives access to all player-usable commands
+    default: true
+    children:
+      sbrankup.rankup: true
+      sbrankup.ranklist: true
+
+
+  sbrankup.admin.*:
+    description: Gives access to all admin-usable commands
+    default: op
+    children:
+      sbrankup.admin.setrank: true
+      sbrankup.admin.reload: true
+
+  sbrankup.rankup:
+    description: Allows you to rankup.
+    default: true
+
+  sbrankup.ranklist:
+    description: Allows you to view the rank list
+    default: true
+
+  sbrankup.admin.setrank:
+    description: Allows you to set the rank of another player
+    default: op
+
+  sbrankup.admin.reload:
+    description: Reloads the configuration from the file
+    default: op
+

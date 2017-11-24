@@ -1,0 +1,37 @@
+# Messages
+# You may configure the plugin output messages here.
+
+
+# NOTE: The plugin prefix is configurable in config.yml
+
+# Bukkit colour codes are accepted here.
+
+notEnoughLevels: >
+  &4You do not have enough levels to rankup. You're current level is %curr_level%.
+  This rank requires %levels_needed%.
+  You need %more_levels% more levels to rank up. If you have recently changed your
+  island level, please get it calculated again by running the /island level command.
+  The short form of the command is /is level
+
+
+rankupsConfiguredIncorrectlyConsole: >
+  &4Rankups are configured incorrectly! Please check your rankups.yml. The error was:
+  The action that you specified does not exist!
+
+
+rankupsConfiguredIncorrectlyToPlayer: >
+  &4There seems to be an error ranking up. If this problem persists, contact your server
+  administrator.
+
+
+notAPlayer: &bYou must be a player to run this command!
+
+lastRank: &bYou are already on the last rank!
+
+noRankDetected: &4Could not detect the rank. Perhaps the server is configured incorrectly?
+
+noPermission: &4You do not have permission to use skyblock rankups.
+
+
+
+

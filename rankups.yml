@@ -1,0 +1,55 @@
+# Rankups configuration
+
+# Example
+
+# rankups:
+#   A:
+#     nextrank: B # Put the name of the next rank in here
+#     cost: 0 # First one, put 0. This means the player is by default already this rank
+#             # This is the island level required to rankup to this rank.
+#     actions: # Actions that will be performed on rankup
+#       - <addgroup> B
+
+
+# Give your players the permission sbrankup.rank.[rank name] so the plugin knows their rank.
+# For the last rank, please give your players the permission sbrankup.rank.lastrank so the plugin knows
+# that the player is on the last rank
+#   lastrank:
+#       name: Z
+#       cost: 1000
+
+# If this looks similar to EZRanksLite/Pro, yes, I got my idea from there
+# Action list:
+# <addgroup> [group] (world) - adds the player to a permission group
+# <removegroup> [group] (world) - removes the player from a permissions group
+# <addpermission> [permission] (world) - adds a permission
+# <removepermission> [permission] (world) - removes a permission
+# <consolecommand> [command] Runs a command as console, use %player_name% to get player name
+# <playercommand> [command] Runs a command as player, use %player_name% to get the player name
+# <playermessage> [message] Sends a message to the player. Bukkit colour codes accepted.
+# <broadcastmessage> [message] Broadcasts a message to the server. Bukkit colour codes accepted.
+# <playeractionbar> [message] Sends an action bar message to the player. Bukkit colour codes accepted.
+# <broadcastactionbar> [message] Sends an action bar message to the whole server. Bukkit colour codes accepted.
+# <setprefix> [prefix] Sets the player's prefix
+# <setsuffix> [suffix] Sets the player's suffix
+
+
+rankups:
+  A:
+    nextrank: B
+    cost: 0
+    actions:
+      - <removepermission> sbrankup.rank.A
+      - <addpermission> sbrankup.rank.B
+      - <consolecommand> ebroadcast &b%player_name% &eranked up to &bB!
+
+  B:
+    nextrank: lastrank
+    cost: 100
+    actions:
+      - <removepermission> sbrankup.rank.B
+      - <addpermission> sbrankup.rank.lastrank
+      - <consolecommand> say %player_name% ranked up to C!
+  lastrank:
+    name: C
+    cost: 200
