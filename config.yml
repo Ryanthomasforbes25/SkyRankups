@@ -1,0 +1,53 @@
+# SBRankup Configuration
+
+# Prefix of the plugin. Used in the console as well as displayed to players. You may use Bukkit Colour codes
+plugin-prefix: "&7[&bSky&cRankup&7] "
+
+
+# Configure your rank list GUI inventory
+
+# You can use the placeholder %rank% to represent the rank
+ranklist:
+  name: "&7Ranks" # Name of the inventory
+  locked-item: # Item used if the player does not have access to the rank
+    item: "STAINED_GLASS_PANE"
+    item-data: 14
+    item-display-name: "&c&l%rank% &r&7[Locked]"
+    item-lore:
+      - "&7Rank %rank%"
+      - "&c&lYou cannot access this rank"
+    item-enchantments: # Provide enchantments to this item
+    # In the form of ENCHANTMENT_NAME;LEVEL
+    # e.g. ARROW_DAMAGE;1
+      - "ARROW_DAMAGE;1"
+    ##### These things below don't work yet #####
+    hide_attributes: false
+    hide_enchantments: false
+
+    # Run commands as player or console when clicked. Use %player% for the players username, and %rank% for the rank
+    # To be done
+    run_commands_on_click:
+      - "[player] warp %rank%"
+  unlocked-item:
+    item: "STAINED_GLASS_PANE"
+    item-data: 5
+    item-display-name: "&a&l%rank% &r&7[Unlocked]"
+    item-lore:
+      - "&7Rank %rank%"
+      - "&a&lYou can access this rank"
+    item-enchantments: # Provide enchantments to this item
+      # In the form of ENCHANTMENT_NAME;LEVEL
+      # e.g. ARROW_DAMAGE;1
+      - "ARROW_DAMAGE;1"
+
+    ##### These things below don't work yet #####
+    hide_attributes: false
+    hide_enchantments: false
+
+    run_commands_on_click:
+
+
+# Enable bStats metrics or not?
+# You can read this on what data will be collected: https://bstats.org/getting-started
+enableMetrics: true
+
